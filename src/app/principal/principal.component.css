@@ -1,0 +1,19 @@
+.line {
+    background-color: aliceblue;
+    border: dashed;
+    animation-duration: 5s;
+    width: 50%;
+    animation-name: moving;
+    animation-iteration-count: infinite;
+}
+
+@keyframes moving {
+    from {
+        margin-left: 30%;
+        width: 50%;
+    }
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}

@@ -1,0 +1,126 @@
+<div class="pt-3 container" style="background-color: #353a40; color: white;">
+    <h2 class="text-center">PRUEBA DE CORRIDA ARRIBA Y ABAJO DE LA MEDIA</h2>
+    <h6 class="text-center">Digite los datos para generar numeros congruenciales mixtos y aplicar la prueba de corrida arriba y abajo de la media</h6>
+    <br>
+    <form>
+        <div class="col-12">
+            <div class="col-4 float-left">
+                <label style="font-weight: bolder; margin-right: 3%;">SEMILLA (X0): </label>
+                <input type="number" placeholder="Digite la semilla" [(ngModel)]="X0" name="semilla" />
+            </div>
+
+            <div class="col-4 float-left">
+                <label style="font-weight: bolder;" class="mr-2">CONSTANTE (a):</label>
+                <input type="number" placeholder="Digite la constante a" [(ngModel)]="vara" name="constantea" disabled />
+            </div>
+
+            <div class="col-4 float-left">
+                <label style="font-weight: bolder;" class="mr-2">ENTERO (k):</label>
+                <input type="number" placeholder="Digite el valor de k" [(ngModel)]="k" name="entero" />
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <div class="col-12">
+
+            <div class="col-4 float-left">
+                <label style="font-weight: bolder; margin-right: 3%;">MODULO (m):</label>
+                <input type="number" placeholder="Digite el modulo" [(ngModel)]="varm" name="modulo" disabled/>
+            </div>
+
+            <div class="col-4 float-left">
+                <label style="font-weight: bolder;" class="mr-4">ENTERO (g):</label>
+                <input style="margin-left: 3.2%;" type="number" placeholder="Digite el valor de g" [(ngModel)]="g" name="g" />
+            </div>
+
+            <div class="col-4 float-left">
+                <label style="font-weight: bolder; margin-right: 3%;">ALPHA (%):</label>
+                <input type="number" style="margin-left: 1%;" placeholder="Digite el valor de alpha" [(ngModel)]="alpha" name="alpha" />
+            </div>
+
+            <br> <br>
+            <button class="btn btn-outline-success mt-2" type="button" style="float: right; font-weight: bolder;" (click)="onSubmit()">CALCULAR</button>
+        </div>
+    </form>
+
+
+    <div class="col-12 mt-2" *ngIf="list">
+        <table class="col-3" style="float: left;">
+            <thead>
+                <tr>
+                    <th>
+                        RI
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ri of listRi; let i = index">
+                    <td [ngClass]="i >= period[0] && i < period[1] ? 'period': ''"> {{ri}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="col-3" style="float: left;">
+            <thead>
+                <tr>
+                    <th>
+                        Secuencias
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let sec of listSec">
+                    <td> {{sec}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="col-3" style="float: left;">
+            <thead>
+                <tr>
+                    <th>
+                        Corridas
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let co of listCo">
+                    <td> {{co}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="col-3" style="float: left;">
+            <label style="font-weight: bolder;" class="mr-2">Periodo:</label>
+            <input type="number" [(ngModel)]="n" name="n" disabled />
+
+            <label style="font-weight: bolder;" class="mr-2">Valor Co:</label>
+            <input type="number" [(ngModel)]="Co" name="Co" disabled />
+
+            <label style="font-weight: bolder;" class="mr-2">Valor n:</label>
+            <input type="number" [(ngModel)]="n" name="n" disabled/>
+
+            <label style="font-weight: bolder;" class="mr-2">Valor n0:</label>
+            <input type="number" [(ngModel)]="no" name="no" disabled/>
+
+            <label style="font-weight: bolder;" class="mr-2">Valor n1:</label>
+            <input type="number" [(ngModel)]="ni" name="ni" disabled/>
+
+            <label style="font-weight: bolder;" class="mr-2">Valor Esperado:</label>
+            <input type="number" [(ngModel)]="UCo" name="UCo" disabled />
+
+            <label style="font-weight: bolder;" class="mr-2">Varianza:</label>
+            <input type="number" [(ngModel)]="ACo" name="ACo" disabled />
+
+            <label style="font-weight: bolder;" class="mr-2">Valor Zo:</label>
+            <input type="number" [(ngModel)]="Zo" name="Zo" disabled />
+
+            <label style="font-weight: bolder;" class="mr-2">Valor Zalpha/2:</label>
+            <input type="number" [(ngModel)]="zalph" name="zalph" disabled />
+
+            <label style="font-weight: bolder;" class="mr-2">Valor -Zalpha/2:</label>
+            <input type="number" [(ngModel)]="menzalph" name="menzalph" disabled />
+
+            <label style="font-weight: bolder;" class="mr-2">Conclusion:</label>
+            <textarea name="conclusion" id="conclusion" cols="30" rows="6" [(ngModel)]="conclusion" disabled></textarea>
+        </div>
+    </div>
+</div>

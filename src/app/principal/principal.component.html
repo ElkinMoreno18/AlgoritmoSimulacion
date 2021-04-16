@@ -1,0 +1,40 @@
+<div class="col-12 mt-3" style="background-color: #353a40; color: white; display: inline-block;">
+    <h3 style="font-weight: bold; text-align: center;">Algoritmo congruencial multiplicativo</h3>
+    <br>
+    <p class="col-8 float-left">
+        El algoritmo congruencial multiplicativo surge del algoritmo congruencial lineal cuando c = 0. Entonces la ecuacion recursiva es:
+        <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Xi+1 = (aXi)mod(m) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; i = 0,1,2,3,....,n
+        <br> La ventaja del algoritmo multiplicativo es que implica una operacion menos a realizar. Los parametros de arranque de este algoritmo son X0,a y m, todos deben ser numeros enteros y mayores que cero. Para transformar los numeros Xi en el intervalo
+        (0,1) se usa la ecuacion ri = Xi/(m-1).
+    </p>
+    <img class="col-4 float-left" src="https://i.ibb.co/FB7jJ6Y/algor-cong-multi.png" height="170px" width="220px">
+</div>
+
+<hr class="line">
+
+<div class="col-12 mt-2" style="background-color: #353a40 ;color: white; display: inline-block;">
+    <h3 style="font-weight: bold; text-align: center;">Prueba de corridas arriba y abajo</h3>
+    <br>
+    <img class="col-3 float-left" src="https://i.ibb.co/b2m1dZ7/arriba-abajo.png" height="160px" style="width: 180px; margin-right: 4%; margin-left: 3%; margin-top: -2%;">
+
+    <p class="col-9 float-left">
+        El procedimiento de esta prueba consiste en determinar una secuencia de numeros (S) que solo contiene unos y ceros, de acuerdo con una comparacion entre ri y ri-1. <br> Posteriormente se determina el numero de corridas observadas Co (una corrida
+        se identifica como la cantidad de unos o ceros consecutivos).
+        <br> Luego se calcula el valor esperado, la varianza del numero de corridas y el estadistico Z0 mediante las ecuaciones de la imagen.
+    </p>
+</div>
+
+<hr class="line">
+
+<div class="col-12 mt-2" style="background-color: #353a40; color: white; display: inline-block;">
+    <h3 style="font-weight: bold; text-align: center;">Prueba de corridas arriba y abajo de la media</h3>
+    <br>
+
+    <p class="col-8 float-left">
+        El procedimiento consiste en determinar una secuencia de unos y ceros, de acuerdo con la comparacion entre los numeros del conjunto ri y 0,5.
+        <br> Posteriormente se determina el numero de corridas observadas Co y los valores de n0 y n1. Co es el numero de corridas en la secuencia, determinado de la misma manera que en la prueba de corridas arriba y abajo
+        <br> n0 es la cantidad de ceros en la secuencia; n1 es igual a la cantidad de unos en la secuencia; se cumple que n0 + n1 = n. Luego se calcula el valor esperado, la varianza del numero de corridas y el estadistico Z0 con las ecuaciones siguientes:
+    </p>
+    <img class="col-4 float-left" src="https://i.ibb.co/LS59F34/arriba-abajo-media.png" height="170px" width="220px">
+</div>
